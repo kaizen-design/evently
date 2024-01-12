@@ -28,7 +28,7 @@ const EventsSchema = new Schema({
   isFree: { type: Boolean, default: false },
   url: { type: String },
   category: { type: Schema.Types.ObjectId, ref: 'Category' },
-  organaizer: { type: Schema.Types.ObjectId, ref: 'User' }
+  organizer: { type: Schema.Types.ObjectId, ref: 'User' }
 });
 
 const Event = models.Event || model("Event", EventsSchema);

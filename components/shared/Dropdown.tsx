@@ -42,8 +42,8 @@ const Dropdown = ({ value, onChangeHandler }: DropdownProps) => {
 
   useEffect(() => {
     const getCategories = async () => {
-      const response = await getAllCategories();
-      response && setCategories(response as ICategory[]);
+      const categoriesList = await getAllCategories();
+      categoriesList && setCategories(categoriesList as ICategory[]);
     }
     getCategories();
   }, [])
