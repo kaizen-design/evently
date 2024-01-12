@@ -68,7 +68,6 @@ const EventForm = ({ userId, type }:EventFormProps) => {
         console.log(error);
       }
     }
-    console.log(values)
   }
 
   return (
