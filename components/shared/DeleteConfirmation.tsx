@@ -14,7 +14,13 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
+} from '@/components/ui/alert-dialog';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { deleteEvent } from '@/lib/actions/event.actions'
 
@@ -24,8 +30,17 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
 
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
-        <Image src="/assets/icons/delete.svg" alt="Delete" width={20} height={20} />
+      <AlertDialogTrigger className='h-[20px]'>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Image src="/assets/icons/delete.svg" alt="Delete" width={20} height={20} />
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Delete</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </AlertDialogTrigger>
 
       <AlertDialogContent className="bg-white">

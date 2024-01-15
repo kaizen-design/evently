@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { auth } from "@clerk/nextjs";
 import { DeleteConfirmation } from "./DeleteConfirmation";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 type EventCardProps = {
   event: IEvent;
@@ -29,15 +35,24 @@ const EventCard = ({
         className="flex-center flex-grow bg-grey-50 bg-cover bg-center text-grey-500"
       />
       {idEventCreator && !hidePrice && (
-        <div className="absolute right-2 top-2 flex gap-3 rounded-xl bg-white p-3 shadow-sm transition-all">
-          <Link href={`/events/${event._id}/update`}>
-            <Image 
-              src="/assets/icons/edit.svg"
-              width={20}
-              height={20}
-              alt="Edit"
-            />
-          </Link>
+        <div className="absolute right-2 top-2 flex items-center gap-3 rounded-xl bg-white p-3 shadow-sm transition-all">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <Link href={`/events/${event._id}/update`}>
+                  <Image 
+                    src="/assets/icons/edit.svg"
+                    width={20}
+                    height={20}
+                    alt="Edit"
+                  />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Edit</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <DeleteConfirmation eventId={event._id} />
         </div>
       )}
