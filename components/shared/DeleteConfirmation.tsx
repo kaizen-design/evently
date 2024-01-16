@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
-import { useTransition } from 'react'
-import { usePathname } from 'next/navigation'
-import Image from 'next/image'
+import { useTransition } from 'react';
+import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 import {
   AlertDialog,
@@ -22,11 +22,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { deleteEvent } from '@/lib/actions/event.actions'
+import { deleteEvent } from '@/lib/actions/event.actions';
 
 export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
-  const pathname = usePathname()
-  let [isPending, startTransition] = useTransition()
+  const pathname = usePathname();
+  let [isPending, startTransition] = useTransition();
 
   return (
     <AlertDialog>
@@ -47,7 +47,7 @@ export const DeleteConfirmation = ({ eventId }: { eventId: string }) => {
         <AlertDialogHeader>
           <AlertDialogTitle>Are you sure you want to delete?</AlertDialogTitle>
           <AlertDialogDescription className="p-regular-16 text-grey-600">
-            This will permanently delete this event
+            This will permanently delete this event.
           </AlertDialogDescription>
         </AlertDialogHeader>
 

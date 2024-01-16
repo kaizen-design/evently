@@ -26,8 +26,8 @@ export default async function Home() {
           </div>
           <Image 
             src="/assets/images/hero.png"
-            width={1000}
-            height={1000}
+            width={1045}
+            height={1262}
             className="max-h-[70vh] object-contain object-center 2xl:max-h-[50vh]"
             alt="Hero"
           />
