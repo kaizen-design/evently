@@ -14,8 +14,6 @@ export default async function Profile() {
     page: 1
   });
 
-  console.log(myEvents)
-
   return (
     <>
       {/* MY TICKETS */}
@@ -60,7 +58,6 @@ export default async function Profile() {
           collectionType="Events_Organized"
           limit={6}
           page={1}
-          urlParamName="eventsPage"
           totalPages={myEvents?.totalPages}
         />
       </section>

@@ -4,6 +4,7 @@ import { SearchParamProps } from "@/types";
 import Collection from "@/components/shared/Collection";
 import Image from "next/image";
 import Link from "next/link";
+import CheckoutButton from "@/components/shared/CheckoutButton";
 
 export default async function EventDetails({ params: { id }, searchParams }: SearchParamProps) {
   const event = await getEventById(id);
@@ -46,6 +47,7 @@ export default async function EventDetails({ params: { id }, searchParams }: Sea
             </div>
 
             {/* CHECKOUT BUTTON */}
+            <CheckoutButton event={event} />
 
             <div className="flex flex-col gap-5">
               <div className="flex gap-2 md:gap-3">
