@@ -1,3 +1,4 @@
+import CategoryFilter from "@/components/shared/CategoryFilter";
 import Collection from "@/components/shared/Collection";
 import Search from "@/components/shared/Search";
 import { Button } from "@/components/ui/button";
@@ -17,6 +18,7 @@ export default async function Home({ searchParams }: SearchParamProps) {
     page,
     limit: 6
   });
+
   return (
     <>
       <section className="bg-primary-50 bg-dotted-pattern bg-contain py-5 md:py-10">
@@ -42,7 +44,8 @@ export default async function Home({ searchParams }: SearchParamProps) {
       <section id="events" className="wrapper my-8 flex flex-col gap-8 md:gap-12">
         <h2 className="h2-bold">Trust by <br /> Thousands of Events</h2>
         <div className="flex w-full flex-col gap-5 md:flex-row">
-          <Search placeholder="" />
+          <Search placeholder="Search events..." />
+          <CategoryFilter />
         </div>
         <Collection 
           data={events?.data}
